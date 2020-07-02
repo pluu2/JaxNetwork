@@ -33,5 +33,12 @@ class jax_base_model():
       self.layer[i].weights=self.layer[i].weights - lr*parameters[str(i) + ' weights'] 
       self.layer[i].bias=self.layer[i].bias - lr*parameters[str(i) + ' bias']
   
+  def set_input(self,x): 
+    self.input=x
+  def set_targets(self,y): 
+    self.target=y
+
   def gradient(self,parameters): 
     return grad(self.backwards)(parameters)
+
+      
