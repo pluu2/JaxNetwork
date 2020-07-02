@@ -1,3 +1,8 @@
+
+import jax.numpy as np
+from jax import grad,jit,vmap
+import random
+
 class jax_base_model(): 
   def __init__(self): 
     self.layer=[]
@@ -29,3 +34,4 @@ class jax_base_model():
   
   def gradient(self,parameters): 
     return grad(self.backwards)(parameters)
+
