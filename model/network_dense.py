@@ -1,3 +1,4 @@
+import numpy as onp
 class network_dense(): 
   def __init__(self,inputs, neurons): #initialize the weights.
     self.weights=onp.random.randn(neurons,inputs)
