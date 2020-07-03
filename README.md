@@ -1,3 +1,6 @@
+![Jax Logo](/jax_logo_250px.png)
+
+
 # JaxNetwork
 ## Practice with implementing trainable NNs in python using Jax. 
 
