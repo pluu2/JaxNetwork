@@ -1,3 +1,21 @@
+def max_pool(image, nrows, ncols): #ow=original 
+    #Splits into submatrix and output max value, however this hast obe done on
+    output=[]
+    d,ow,oh = image.shape
+    for i in range(image.shape[0]): #for each filter. 
+      array=image[i].reshape(ow,oh)
+      r, h = array.shape
+     
+      temp=(array.reshape(h//nrows, nrows, -1, ncols)
+                  .swapaxes(1, 2)
+                  .reshape(-1, nrows, ncols))
+        
+      output.append(np.max(temp.reshape(-1,4),axis=1))
+    output=np.array(output)
+     
+    output=output.reshape(image.shape[0],int(ow/nrows),int(oh/ncols))
+    return output
+  
 def adj_matrix(row,height,padding):  #row_length is WITH padding. and assumes stride is 1
   padding=padding*2
   row=row+padding
