@@ -12,9 +12,10 @@ The following is very rough flexible implementation of NN using Jax. This jax im
 ### Notes: 
 ----
 
-- The optimizer used in the basic implementation is SGD. 
+- The optimizer used in the basic implementation is small-batch-SGD. 
 - ~~I have coded a much more barebones implementation of a ANN with VMAP. It will be uploaded soon.~~
 - A barebones implementation of MNIST is uploaded. I ran into an issue with a OOM warning on GPU. According to Jax documentation it happens when you import tensorflow with GPU enabled. Tf automatically allocates memory. Since the example only uses tf to dataload mnist, I have forced tf to utilize CPU only. 
+- I have completed a implementation of a CNN, and have successfully trained on CIFAR-10(61.75%), Fashion_MNIST(90.53%), and MNIST (99.03%) datasets
 
 
 ### To do: 
